@@ -40,8 +40,6 @@
         <button class="submit-btn" type="button" @onclick=" () => {if(editTask){UpdateTask();} else{AddTask(); }}">@(editTask? "Update" : "Add Task")</button>
     </form>
 </div>
-
-
 <div class="task-cards-container">
     @foreach(var task in tasks)
     {
