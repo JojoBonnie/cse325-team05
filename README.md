@@ -51,6 +51,7 @@ Task Tracker is a simple and efficient task management web application built usi
 1. Ensure you have the latest .NET SDK installed.
 2. Restore NuGet packages.
  
+ 
 ### Run the Application
 ```bash
 dotnet run
