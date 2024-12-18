@@ -23,17 +23,17 @@ namespace team_project.Services
 
         public string CreateAccount(string username, string password)
         {
-            bool accountMatch = _accounts.Any(account => account.Username == username && account.Password == password);
+            bool accountMatch = _accounts.Any(account => account.Username == username);
             if (accountMatch)
             {
-                return "This account already exists. Login.";
+                return "This username already exists. Login instead.";
             }
             else
             {
                 Account accountData = new Account { Id = _accounts.Count() + 1, Username = username, Password = password };
                 _accounts.Add(accountData);
 
-                return "Your account has been successfully created.";
+                return "Account Created";
             }
         }
 
@@ -51,20 +51,20 @@ namespace team_project.Services
             }
         }
 
-        public Account? GetAccount(string username, string password)
-        {
-            Account? accountData = _accounts.Find(account => account.Username == username && account.Password == password);
+        // public Account? GetAccount(string username, string password)
+        // {
+        //     Account? accountData = _accounts.Find(account => account.Username == username && account.Password == password);
 
-            if (accountData != null)
-            {
-                Console.WriteLine("Login Successful");
-                return accountData;
-            }
-            else
-            {
-                Console.WriteLine("No matching account found");
-                return null;
-            }
-        }
+        //     if (accountData != null)
+        //     {
+        //         Console.WriteLine("Login Successful");
+        //         return accountData;
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("No matching account found");
+        //         return null;
+        //     }
+        // }
     }
 }

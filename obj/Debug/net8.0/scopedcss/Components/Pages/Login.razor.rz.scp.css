@@ -73,9 +73,18 @@
 .message[b-0tf1iooemy] {
 text-align: center;
 width: 100%;
+color: red;
 }
 .submit-btn:hover[b-0tf1iooemy] {
     background-color: #074f9c;;
+}
+
+/* Login line */
+.signup-line[b-0tf1iooemy]{
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    margin-top: 5px;
 }
 
 /* Responsive design */

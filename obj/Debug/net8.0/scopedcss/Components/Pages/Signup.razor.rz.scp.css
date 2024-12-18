@@ -70,12 +70,21 @@
 }
 
 /* Response Message */
-.message[b-rjt3f5jsb1] {
-text-align: center;
-width: 100%;
+.message[b-rjt3f5jsb1]{
+    text-align: center;
+    width: 100%;
+    color: red;
 }
 .submit-btn:hover[b-rjt3f5jsb1] {
-    background-color: #0056b3;
+    background-color: #074f9c;;
+}
+
+/* Login line */
+.login-line[b-rjt3f5jsb1]{
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    margin-top: 5px;
 }
 
 /* Responsive design */
