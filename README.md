@@ -18,7 +18,7 @@ Task Tracker is a simple and efficient task management web application built usi
 - **Task Management**:
   - **Create Tasks**: Users can create tasks with attributes such as priority tags, deadlines, and categories.
   - **Edit and Delete Tasks**: Easily update or remove tasks as needed.
-  - **Mark Tasks as Complete**: Keep track of finished tasks.
+  - **Mark Tasks as Completed**: Keep track of finished tasks.
 - **Performance**: Optimized for speed and usability, ensuring a smooth user experience.
 - **Accessibility**: Designed to be accessible and usable by a wide range of users.
  
