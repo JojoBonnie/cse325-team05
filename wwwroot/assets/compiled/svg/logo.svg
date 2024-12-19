@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 34" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+  <!-- Favicon Circle with T -->
+  <circle cx="16.5" cy="16.5" r="16.5" fill="#41bbdd"/>
+  <text x="16.5" y="16.5" font-size="14" font-weight="bold" text-anchor="middle" dy=".3em" fill="#ffffff">T</text>
+  
+  <!-- TaskTracker Text -->
+  <text x="40" y="22" font-size="18" font-weight="bold" fill="#435ebe" font-family="Arial, sans-serif">TaskTracker</text>
+</svg>

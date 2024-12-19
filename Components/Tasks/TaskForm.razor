@@ -1,0 +1,106 @@
+@page "/add-task"
+@page "/edit-task/{TaskId}"
+@inject TaskService TaskService
+@inject NavigationManager Navigation
+
+<div class="page-content px-4 py-4">
+    <!-- Page Title -->
+    <div class="page-heading">
+        <h3>@(TaskId == null ? "Add Task" : "Edit Task")</h3>
+    </div>
+
+    <!-- Task Form -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Task Information</h4>
+                </div>
+                <div class="card-body">
+                    <form @onsubmit="HandleSubmit">
+                        <div class="form-group mb-3">
+                            <label for="Title" class="form-label">Title</label>
+                            <input type="text" id="Title" class="form-control" placeholder="Task title"
+                                @bind="task.Title" required />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="Description" class="form-label">Description</label>
+                            <textarea id="Description" class="form-control" rows="3" placeholder="Task description"
+                                @bind="task.Description"></textarea>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="Category" class="form-label">Category</label>
+                            <input type="text" id="Category" class="form-control" placeholder="Task category"
+                                @bind="task.Category" />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="Priority" class="form-label">Priority</label>
+                            <select id="Priority" class="form-select" @bind="task.Priority">
+                                <option value="" disabled>Select priority</option>
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="Deadline" class="form-label">Deadline</label>
+                            <input type="date" id="Deadline" class="form-control" @bind="task.Deadline" required />
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-check-circle"></i> Save
+                            </button>
+                            <button type="button" class="btn btn-secondary">
+                                <a href="/tasks" class="text-white">
+                                    <i class="bi bi-x-circle"></i> Cancel
+                                </a>
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string TaskId { get; set; }
+
+    private TaskModel task = new TaskModel();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!string.IsNullOrEmpty(TaskId))
+        {
+            // Fetch task details if editing
+            var fetchedTasks = await TaskService.GetTasksAsync("user-id");
+            task = fetchedTasks.FirstOrDefault(t => t.Id == TaskId) ?? new TaskModel();
+        }
+    }
+
+    private async Task HandleSubmit()
+    {
+        if (string.IsNullOrEmpty(TaskId))
+        {
+            await TaskService.AddTaskAsync(task);
+        }
+        else
+        {
+            await TaskService.UpdateTaskAsync(task);
+        }
+
+        Navigation.NavigateTo("/tasks");
+    }
+
+    private void Cancel()
+    {
+        Navigation.NavigateTo("/tasks");
+    }
+}

@@ -1,0 +1,158 @@
+﻿@page "/"
+<PageTitle>Task Manager Dashboard</PageTitle>
+
+<div class="page-content px-4 py-4">
+    <section class="row">
+        <!-- Task Overview Cards -->
+        <div class="col-12 col-lg-9">
+            <div class="row">
+                <!-- Tasks Completed -->
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-start">
+                                    <div class="stats-icon green mb-2">
+                                        <i class="bi bi-check2-all"></i>
+                                    </div>
+                                </div>
+                                <div class="col-8 text-end">
+                                    <h6 class="text-muted font-semibold">Completed Tasks</h6>
+                                    <h6 class="font-extrabold mb-0">45</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Tasks -->
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-start">
+                                    <div class="stats-icon red mb-2">
+                                        <i class="bi bi-hourglass-split"></i>
+                                    </div>
+                                </div>
+                                <div class="col-8 text-end">
+                                    <h6 class="text-muted font-semibold">Pending Tasks</h6>
+                                    <h6 class="font-extrabold mb-0">12</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- In-Progress Tasks -->
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-start">
+                                    <div class="stats-icon blue mb-2">
+                                        <i class="bi bi-play-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="col-8 text-end">
+                                    <h6 class="text-muted font-semibold">In Progress</h6>
+                                    <h6 class="font-extrabold mb-0">8</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overdue Tasks -->
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-4 d-flex justify-content-start">
+                                    <div class="stats-icon purple mb-2">
+                                        <i class="bi bi-exclamation-triangle"></i>
+                                    </div>
+                                </div>
+                                <div class="col-8 text-end">
+                                    <h6 class="text-muted font-semibold">Overdue Tasks</h6>
+                                    <h6 class="font-extrabold mb-0">5</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Latest Tasks Table -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Latest Tasks</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-lg">
+                                    <thead>
+                                        <tr>
+                                            <th>Task Name</th>
+                                            <th>Priority</th>
+                                            <th>Status</th>
+                                            <th>Deadline</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Design Landing Page</td>
+                                            <td><span class="badge bg-danger">High</span></td>
+                                            <td><span class="badge bg-success">Completed</span></td>
+                                            <td>2024-06-01</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fix Backend Bugs</td>
+                                            <td><span class="badge bg-warning">Medium</span></td>
+                                            <td><span class="badge bg-primary">In Progress</span></td>
+                                            <td>2024-06-05</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Write Documentation</td>
+                                            <td><span class="badge bg-success">Low</span></td>
+                                            <td><span class="badge bg-danger">Overdue</span></td>
+                                            <td>2024-05-30</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task Chart -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Task Progress Chart</h4>
+                        </div>
+                        <div class="card-body">
+                            <div id="chart-tasks-overview"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task Summary Chart -->
+        <div class="col-12 col-lg-3">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Task Type</h4>
+                </div>
+                <div class="card-body">
+                    <div id="chart-task-type"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
